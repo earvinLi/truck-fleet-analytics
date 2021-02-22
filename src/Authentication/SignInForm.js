@@ -18,11 +18,7 @@ const validationSchema = yup.object({
     .required('Username is required'),
   passowrd: yup
     .string('Enter your passowrd')
-    .min(8, 'Passowrd should be of minium 8 characters length')
     .required('Passowrd is required'),
-  companyName: yup
-    .string('Enter your company name')
-    .required('Company name is required'),
 });
 
 // Component Definition
@@ -37,7 +33,6 @@ const SignInForm = () => {
     initialValues: {
       username: '',
       passowrd: '',
-      companyName: '',
     },
     validationSchema,
     onSubmit: (values) => console.log(values),
@@ -46,7 +41,6 @@ const SignInForm = () => {
   const inputFields = [
     { name: 'username', label: 'Username' },
     { name: 'passowrd', label: 'Passowrd' },
-    { name: 'companyName', label: 'Company Name' },
   ].map((inputField) => {
     const {
       name,

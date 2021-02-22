@@ -3,7 +3,7 @@ import React from 'react';
 
 // Internal Dependencies
 import './App.css';
-import SignInForm from '../SignIn/SignInForm';
+import SignInForm from '../Authentication/SignInForm';
 
 function App() {
   return (
