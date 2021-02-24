@@ -21,7 +21,7 @@ const signInSlice = createSlice({
 
 const { saveUser } = signInSlice.actions;
 
-export const signInUser = (userToSignIn) => async (dispatch) => {
+export const signInUser = (userToSignIn, naviagation) => async (dispatch) => {
   const { localStorage } = window;
   if (!localStorage.getItem('userToken')) {
     const fetchedUserToken = await fetchUserToken(userToSignIn);
@@ -30,6 +30,7 @@ export const signInUser = (userToSignIn) => async (dispatch) => {
 
   const fetchedUser = await fetchUser();
   dispatch(saveUser({ user: fetchedUser.data }));
+  naviagation();
 };
 
 export default signInSlice.reducer;

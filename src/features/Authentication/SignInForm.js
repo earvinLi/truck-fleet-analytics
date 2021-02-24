@@ -1,5 +1,6 @@
 // External Dependencies
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -25,6 +26,9 @@ const validationSchema = yup.object({
 
 // Component Definition
 const SignInForm = () => {
+  const routeHistory = useHistory();
+  const navigateToDashboard = () => routeHistory.push('/dashboard');
+
   const dispatch = useDispatch();
 
   const formik = useFormik({
@@ -33,7 +37,7 @@ const SignInForm = () => {
       password: '',
     },
     validationSchema,
-    onSubmit: (values) => dispatch(signInUser(values)),
+    onSubmit: (values) => dispatch(signInUser(values, navigateToDashboard)),
   });
 
   const {
@@ -67,18 +71,21 @@ const SignInForm = () => {
   });
 
   return (
-    <div className={formContainerStyle}>
-      <form onSubmit={formik.handleSubmit}>
-        {inputFields}
-        <Button
-          className={submitButtonStyle}
-          variant="outlined"
-          type="submit"
-        >
-          Sign In
-        </Button>
-      </form>
-    </div>
+    <>
+      <h1>Truck Fleet Analytics</h1>
+      <div className={formContainerStyle}>
+        <form onSubmit={formik.handleSubmit}>
+          {inputFields}
+          <Button
+            className={submitButtonStyle}
+            variant="outlined"
+            type="submit"
+          >
+            Sign In
+          </Button>
+        </form>
+      </div>
+    </>
   );
 };
 
