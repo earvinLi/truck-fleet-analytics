@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Internal Dependencies
 import getSignInFormStyles from './styles/signInFormStyles';
-import { fetchUserToken } from './reducers/signInSlice';
+import { signInUser } from './reducers/signInSlice';
 
 // Local Variables
 const validationSchema = yup.object({
@@ -33,7 +33,7 @@ const SignInForm = () => {
       password: '',
     },
     validationSchema,
-    onSubmit: (values) => dispatch(fetchUserToken(values)),
+    onSubmit: (values) => dispatch(signInUser(values)),
   });
 
   const {

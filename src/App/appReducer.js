@@ -2,7 +2,7 @@
 import { combineReducers } from 'redux';
 
 // Internal Dependencies
-import signInReducer from '../Authentication/reducers/signInSlice';
+import signInReducer from '../features/Authentication/reducers/signInSlice';
 
 const appReducer = combineReducers({
   signIn: signInReducer,

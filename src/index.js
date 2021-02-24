@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 // Internal Dependencies
-import App from './App/App';
-import appStore from './App/appStore';
+import App from './app/App';
+import appStore from './app/appStore';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -22,7 +22,7 @@ const renderApp = () => {
 
 renderApp();
 if (process.env.NODE_ENV === 'development' && module.hot) {
-  module.hot.accept('./App/App', renderApp);
+  module.hot.accept('./app/App', renderApp);
 }
 
 // If you want to start measuring performance in your app, pass a function
