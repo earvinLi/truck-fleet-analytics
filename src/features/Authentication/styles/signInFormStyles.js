@@ -1,4 +1,11 @@
 export default (() => ({
+  pageStyle: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '100vh',
+  },
   formContainerStyle: {
     border: 'solid 2px gray',
     borderRadius: 25,

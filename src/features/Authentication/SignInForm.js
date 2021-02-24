@@ -41,6 +41,7 @@ const SignInForm = () => {
   });
 
   const {
+    pageStyle,
     formContainerStyle,
     textFieldStyle,
     submitButtonStyle,
@@ -71,7 +72,7 @@ const SignInForm = () => {
   });
 
   return (
-    <>
+    <div className={pageStyle}>
       <h1>Truck Fleet Analytics</h1>
       <div className={formContainerStyle}>
         <form onSubmit={formik.handleSubmit}>
@@ -85,7 +86,7 @@ const SignInForm = () => {
           </Button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

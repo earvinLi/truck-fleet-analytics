@@ -6,19 +6,37 @@ import {
   Route,
 } from 'react-router-dom';
 
+// Material-UI Dependencies
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+} from '@material-ui/core/styles';
+
 // Internal Dependencies
 import './App.css';
 import SignInForm from '../features/Authentication/SignInForm';
 import Dashboard from '../features/Dashboard/Dashboard';
 
+// Material-UI theme Configuration
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      contrastText: '#fff',
+      main: '#4AA3DF',
+    },
+  },
+});
+
 // Component Definition
 const App = () => (
-  <Router>
-    <Switch>
-      <Route path="/signIn"><SignInForm /></Route>
-      <Route path="/dashboard"><Dashboard /></Route>
-    </Switch>
-  </Router>
+  <MuiThemeProvider theme={theme}>
+    <Router>
+      <Switch>
+        <Route path="/signIn"><SignInForm /></Route>
+        <Route path="/dashboard"><Dashboard /></Route>
+      </Switch>
+    </Router>
+  </MuiThemeProvider>
 );
 
 export default App;

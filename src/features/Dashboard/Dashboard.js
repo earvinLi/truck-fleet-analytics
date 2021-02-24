@@ -2,10 +2,11 @@
 import React from 'react';
 
 // Internal Dependencies
+import NavigationBar from '../NavigationBar/NavigationBar';
 
 // Component Definition
-const App = () => (
-  <h1>Dashboard</h1>
+const Dashboard = () => (
+  <NavigationBar />
 );
 
-export default App;
+export default Dashboard;
