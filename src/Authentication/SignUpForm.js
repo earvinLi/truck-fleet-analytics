@@ -9,17 +9,17 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Internal Dependencies
-import getSignInFormStyles from './styles/SignInFormStyles';
+import getSignInFormStyles from './styles/signInFormStyles';
 
 // Local Variables
 const validationSchema = yup.object({
   username: yup
     .string('Enter your username')
     .required('Username is required'),
-  passowrd: yup
-    .string('Enter your passowrd')
-    .min(8, 'Passowrd should be of minium 8 characters length')
-    .required('Passowrd is required'),
+  password: yup
+    .string('Enter your password')
+    .min(8, 'Password should be of minium 8 characters length')
+    .required('Password is required'),
   companyName: yup
     .string('Enter your company name')
     .required('Company name is required'),
@@ -36,7 +36,7 @@ const SignInForm = () => {
   const formik = useFormik({
     initialValues: {
       username: '',
-      passowrd: '',
+      password: '',
       companyName: '',
     },
     validationSchema,
@@ -45,7 +45,7 @@ const SignInForm = () => {
 
   const inputFields = [
     { name: 'username', label: 'Username' },
-    { name: 'passowrd', label: 'Passowrd' },
+    { name: 'password', label: 'Password' },
     { name: 'companyName', label: 'Company Name' },
   ].map((inputField) => {
     const {

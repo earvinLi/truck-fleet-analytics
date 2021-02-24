@@ -1,5 +1,6 @@
 // External Dependencies
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
@@ -9,38 +10,41 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Internal Dependencies
-import getSignInFormStyles from './styles/SignInFormStyles';
+import getSignInFormStyles from './styles/signInFormStyles';
+import { fetchUserToken } from './reducers/signInSlice';
 
 // Local Variables
 const validationSchema = yup.object({
   username: yup
     .string('Enter your username')
     .required('Username is required'),
-  passowrd: yup
-    .string('Enter your passowrd')
-    .required('Passowrd is required'),
+  password: yup
+    .string('Enter your password')
+    .required('Password is required'),
 });
 
 // Component Definition
 const SignInForm = () => {
+  const dispatch = useDispatch();
+
+  const formik = useFormik({
+    initialValues: {
+      username: '',
+      password: '',
+    },
+    validationSchema,
+    onSubmit: (values) => dispatch(fetchUserToken(values)),
+  });
+
   const {
     formContainerStyle,
     textFieldStyle,
     submitButtonStyle,
   } = makeStyles((theme) => getSignInFormStyles(theme))();
 
-  const formik = useFormik({
-    initialValues: {
-      username: '',
-      passowrd: '',
-    },
-    validationSchema,
-    onSubmit: (values) => console.log(values),
-  });
-
   const inputFields = [
     { name: 'username', label: 'Username' },
-    { name: 'passowrd', label: 'Passowrd' },
+    { name: 'password', label: 'Password' },
   ].map((inputField) => {
     const {
       name,

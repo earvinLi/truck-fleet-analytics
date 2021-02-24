@@ -1,7 +1,11 @@
 {
   "extends": "airbnb",
   "rules": {
-    "react/jsx-filename-extension": ["error", {"extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": ["error", {"extensions": [".js", ".jsx"] }],
+    "no-param-reassign": ["error", {
+      "props": true,
+      "ignorePropertyModificationsFor": ["state"]
+    }]
   },
   "globals": {
     "document": true,
