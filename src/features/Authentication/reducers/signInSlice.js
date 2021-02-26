@@ -13,13 +13,13 @@ const signInSlice = createSlice({
     user: {},
   },
   reducers: {
-    saveUser: (state, { payload }) => {
+    storeUser: (state, { payload }) => {
       state.user = payload.user;
     },
   },
 });
 
-const { saveUser } = signInSlice.actions;
+const { storeUser } = signInSlice.actions;
 
 export const signInUser = (userToSignIn, naviagation) => async (dispatch) => {
   const { localStorage } = window;
@@ -29,7 +29,7 @@ export const signInUser = (userToSignIn, naviagation) => async (dispatch) => {
   }
 
   const fetchedUser = await fetchUser();
-  dispatch(saveUser({ user: fetchedUser.data }));
+  dispatch(storeUser({ user: fetchedUser.data }));
   naviagation();
 };
 

@@ -27,7 +27,7 @@ const validationSchema = yup.object({
 // Component Definition
 const SignInForm = () => {
   const routeHistory = useHistory();
-  const navigateToDashboard = () => routeHistory.push('/dashboard');
+  const navigateToDashboard = () => routeHistory.push('/driverDashboard');
 
   const dispatch = useDispatch();
 

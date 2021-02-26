@@ -15,7 +15,7 @@ import {
 // Internal Dependencies
 import './App.css';
 import SignInForm from '../features/Authentication/SignInForm';
-import Dashboard from '../features/Dashboard/Dashboard';
+import DriverDashboard from '../features/DriverDashboard/DriverDashboard';
 
 // Material-UI theme Configuration
 const theme = createMuiTheme({
@@ -33,7 +33,7 @@ const App = () => (
     <Router>
       <Switch>
         <Route path="/signIn"><SignInForm /></Route>
-        <Route path="/dashboard"><Dashboard /></Route>
+        <Route path="/driverDashboard"><DriverDashboard /></Route>
       </Switch>
     </Router>
   </MuiThemeProvider>

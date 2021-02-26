@@ -1,6 +1,5 @@
 // Fetch Helper
 const apiBaseURL = process.env.REACT_APP_API_BASE_URL;
-const userToken = window.localStorage.getItem('userToken');
 
 const handleFetchError = (err) => {
   console.warn(err);
@@ -11,6 +10,8 @@ const handleFetchError = (err) => {
 };
 
 const fetchRequest = async (url, options = {}) => {
+  const userToken = window.localStorage.getItem('userToken');
+
   const optionsToUse = options;
   optionsToUse.headers = optionsToUse.headers || {};
   optionsToUse.headers.Authorization = `Bearer ${userToken || ''}`;
