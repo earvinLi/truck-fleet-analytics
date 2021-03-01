@@ -26,10 +26,8 @@ const validationSchema = yup.object({
 
 // Component Definition
 const SignInForm = () => {
-  const routeHistory = useHistory();
-  const navigateToDashboard = () => routeHistory.push('/driverDashboard');
-
   const dispatch = useDispatch();
+  const routeHistory = useHistory();
 
   const formik = useFormik({
     initialValues: {
@@ -37,7 +35,7 @@ const SignInForm = () => {
       password: '',
     },
     validationSchema,
-    onSubmit: (values) => dispatch(signInUser(values, navigateToDashboard)),
+    onSubmit: (values) => dispatch(signInUser(values, routeHistory)),
   });
 
   const {

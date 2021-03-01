@@ -21,7 +21,7 @@ const signInSlice = createSlice({
 
 const { storeUser } = signInSlice.actions;
 
-export const signInUser = (userToSignIn, naviagation) => async (dispatch) => {
+export const signInUser = (userToSignIn, naviagation) => async (dispatch, getState) => {
   const { localStorage } = window;
   if (!localStorage.getItem('userToken')) {
     const fetchedUserToken = await fetchUserToken(userToSignIn);
@@ -30,7 +30,9 @@ export const signInUser = (userToSignIn, naviagation) => async (dispatch) => {
 
   const fetchedUser = await fetchUser();
   dispatch(storeUser({ user: fetchedUser.data }));
-  naviagation();
+
+  const { userType } = getState().signIn.user;
+  naviagation.push(userType === 1 ? '/driverDashboard' : '/adminDashboard');
 };
 
 export default signInSlice.reducer;
