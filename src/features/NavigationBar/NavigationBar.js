@@ -13,7 +13,7 @@ import AccountIconedMenu from './AccountIconedMenu';
 const AppHeader = () => (
   <AppBar position="static">
     <Toolbar>
-      <Typography variant="h6">Truck Fleet Analytics</Typography>
+      <Typography variant="h5">Truck Fleet Analytics</Typography>
       <div style={{ flexGrow: 1 }} />
       <AccountIconedMenu />
     </Toolbar>

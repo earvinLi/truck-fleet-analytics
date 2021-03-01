@@ -10,7 +10,7 @@ import TableCell from '@material-ui/core/TableCell';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Internal Dependencies
-import getDriverStatusHeadStyles from './styles/dataTableHeadStyles';
+import getDataTableHeadStyles from './styles/dataTableHeadStyles';
 
 // Component Definition
 const DataTableHead = (props) => {
@@ -22,7 +22,7 @@ const DataTableHead = (props) => {
 
   const {
     activeColumnSpanStyle,
-  } = makeStyles((theme) => getDriverStatusHeadStyles(theme))();
+  } = makeStyles((theme) => getDataTableHeadStyles(theme))();
 
   const [tableDataOrder, setTableDataOrder] = useState('desc');
   const [tableDataOrderBy, setTableDataOrderBy] = useState('id');
