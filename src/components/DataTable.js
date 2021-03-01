@@ -29,7 +29,7 @@ const DataTable = (props) => {
 
   const tableBodyRows = tableBodyData.map((tableBodyDataPerRow) => {
     const tableBodyRowCells = Object.keys(tableBodyDataPerRow).map((tableBodyKey) => (
-      <TableCell>{tableBodyDataPerRow[tableBodyKey]}</TableCell>
+      <TableCell key={tableBodyKey}>{tableBodyDataPerRow[tableBodyKey]}</TableCell>
     ));
 
     return <TableRow key={tableBodyDataPerRow.id}>{tableBodyRowCells}</TableRow>;

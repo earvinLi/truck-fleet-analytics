@@ -6,8 +6,9 @@ import {
 } from 'react-redux';
 
 // Internal Dependencies
-import DriverTelemetryDataTable from './DriverTelemetryDataTable';
 import NavigationBar from '../NavigationBar/NavigationBar';
+import DriverTelemetryDataTable from './DriverTelemetryDataTable';
+import DriverStatusHeader from './DriverStatusHeader';
 import { getDriverTelemetryData } from './reducers/driverTelemetryDataSlice';
 
 // Component Definition
@@ -22,6 +23,7 @@ const DriverDashboard = () => {
   return (
     <>
       <NavigationBar />
+      <DriverStatusHeader />
       <DriverTelemetryDataTable />
     </>
   );
