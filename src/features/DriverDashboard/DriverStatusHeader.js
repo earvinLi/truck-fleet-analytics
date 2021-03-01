@@ -14,9 +14,7 @@ const DriverStatusHeader = () => {
   const { userName } = useSelector((state) => state.signIn.user);
   const { telemetryData } = useSelector((state) => state.driverDashboard);
 
-  const {
-    mainContainerStyle,
-  } = makeStyles((theme) => getDriverStatusHeaderStyles(theme))();
+  const { mainContainerStyle } = makeStyles((theme) => getDriverStatusHeaderStyles(theme))();
 
   return (
     <div className={mainContainerStyle}>

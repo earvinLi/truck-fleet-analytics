@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 // Internal Dependencies
-import DataTable from '../../components/DataTable';
+import DataTable from '../../components/DataTable/DataTable';
 
 const DriverTelemetryDataTable = () => {
   const {
@@ -11,13 +11,13 @@ const DriverTelemetryDataTable = () => {
   } = useSelector((state) => state.driverDashboard);
 
   const tableHeadData = [
-    'Origin',
-    'Destination',
-    'Speed',
-    'Drive Duration',
-    'Fuel Consumption',
-    'Fuel Used',
-    'Telemetry Data Id',
+    { id: 'origin', label: 'Origin' },
+    { id: 'destination', label: 'Destination' },
+    { id: 'speed', label: 'Speed' },
+    { id: 'driveDuration', label: 'Drive Duration' },
+    { id: 'fuelConsumption', label: 'Fuel Consumption' },
+    { id: 'fuelUsed', label: 'Fuel Used' },
+    { id: 'id', label: 'Telemetry Data Id' },
   ];
 
   const tableBodyData = driverTelemetryData.map((driverTelemetryDataToUse) => {
