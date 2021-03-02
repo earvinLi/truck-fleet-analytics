@@ -16,10 +16,16 @@ const signInSlice = createSlice({
     storeUser: (state, { payload }) => {
       state.user = payload.user;
     },
+    removeUser: (state) => {
+      state.user = {};
+    },
   },
 });
 
-const { storeUser } = signInSlice.actions;
+export const {
+  storeUser,
+  removeUser,
+} = signInSlice.actions;
 
 export const signInUser = (userToSignIn, naviagation) => async (dispatch, getState) => {
   const { localStorage } = window;

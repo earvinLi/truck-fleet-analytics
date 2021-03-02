@@ -65,6 +65,7 @@ const SignInForm = () => {
         onChange={formik.handleChange}
         error={formik.touched[name] && Boolean(formik.errors[name])}
         helperText={formik.touched[name] && formik.errors[name]}
+        type={name === 'password' ? 'password' : ''}
       />
     );
   });

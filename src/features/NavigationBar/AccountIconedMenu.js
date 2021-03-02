@@ -1,5 +1,6 @@
 // External Dependencies
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 // Material-UI Dependencies
@@ -9,16 +10,19 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 // Internal Dependencies
 import TooltippedButton from '../../components/TooltippedButton';
+import { removeUser } from '../Authentication/reducers/signInSlice';
 
 // Component Definition
 const AccountIconedMenu = () => {
   const [anchorElement, setAnchorElement] = useState(null);
+  const dispatch = useDispatch();
   const routeHistory = useHistory();
 
   const handleOpenMenu = (event) => setAnchorElement(event.currentTarget);
   const handleCloseMenu = () => setAnchorElement(null);
 
   const handleSignOut = () => {
+    dispatch(removeUser());
     window.localStorage.removeItem('userToken');
     routeHistory.push('/signIn');
     handleCloseMenu();
