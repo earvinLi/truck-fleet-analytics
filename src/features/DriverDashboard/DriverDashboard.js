@@ -10,8 +10,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Internal Dependencies
 import NavigationBar from '../NavigationBar/NavigationBar';
-import DriverTelemetryDataTable from './DriverTelemetryDataTable';
 import DriverStatusHeader from './DriverStatusHeader';
+import DriverTelemetryDataTable from './DriverTelemetryDataTable';
+import AppFooter from '../AppFooter/AppFooter';
 import { getDriverTelemetryData } from './reducers/driverTelemetryDataSlice';
 import getDriverDashboardStyles from './styles/driverDashboardStyles';
 
@@ -33,6 +34,7 @@ const DriverDashboard = () => {
       <NavigationBar />
       <DriverStatusHeader />
       <DriverTelemetryDataTable />
+      <AppFooter />
     </div>
   );
 };

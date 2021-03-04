@@ -43,7 +43,14 @@ const DataTable = (props) => {
       <TableCell key={tableBodyKey}>{tableBodyDataPerRow[tableBodyKey]}</TableCell>
     ));
 
-    return <TableRow key={tableBodyDataPerRow.id}>{tableBodyRowCells}</TableRow>;
+    return (
+      <TableRow
+        key={tableBodyDataPerRow.id}
+        hover
+      >
+        {tableBodyRowCells}
+      </TableRow>
+    );
   });
 
   return (
