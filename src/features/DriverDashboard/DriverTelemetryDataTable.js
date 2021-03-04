@@ -44,6 +44,7 @@ const DriverTelemetryDataTable = () => {
 
   return (
     <DataTable
+      tableTitle="Telemetry Data of Trips"
       tableHeadData={tableHeadData}
       tableBodyData={tableBodyData}
     />

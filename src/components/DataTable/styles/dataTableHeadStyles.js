@@ -1,4 +1,7 @@
 export default (() => ({
+  headCellStyle: {
+    backgroundColor: 'rgb(255, 255, 255)',
+  },
   activeColumnSpanStyle: {
     border: 0,
     clip: 'rect(0 0 0 0)',

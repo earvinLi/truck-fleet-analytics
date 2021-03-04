@@ -21,6 +21,7 @@ const DataTableHead = (props) => {
   } = props;
 
   const {
+    headCellStyle,
     activeColumnSpanStyle,
   } = makeStyles((theme) => getDataTableHeadStyles(theme))();
 
@@ -66,6 +67,7 @@ const DataTableHead = (props) => {
     return (
       <TableCell
         key={id}
+        className={headCellStyle}
         sortDirection={isColumnActive ? tableDataOrder : false}
       >
         <TableSortLabel

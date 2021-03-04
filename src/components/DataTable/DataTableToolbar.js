@@ -13,10 +13,10 @@ import TooltippedButton from '../TooltippedButton';
 import getDataTableToolbarStyles from './styles/dataTableToolbarStyles';
 
 // Component Definition
-const DataTable = () => {
-  const {
-    toolBarTitleStyle,
-  } = makeStyles((theme) => getDataTableToolbarStyles(theme))();
+const DataTable = (props) => {
+  const { tableTitle } = props;
+
+  const { toolBarTitleStyle } = makeStyles((theme) => getDataTableToolbarStyles(theme))();
 
   const handleRefetchData = () => {};
 
@@ -26,7 +26,7 @@ const DataTable = () => {
         className={toolBarTitleStyle}
         variant="h6"
       >
-        Your trips&apos; telemetry data
+        {tableTitle}
       </Typography>
       <TooltippedButton
         ariaLabel="refetch telemetry data"
